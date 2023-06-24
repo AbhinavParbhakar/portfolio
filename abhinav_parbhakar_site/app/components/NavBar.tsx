@@ -5,22 +5,33 @@ import { useState } from "react";
 
 export default function NavBar(){
     const [burgerState,setBurgerState]  = useState(true)
+    function setBurger(){
+        setBurgerState(!burgerState)
+    }
     return(
-    <div className="bg-slate-300 flex flex-col justify-center">
-        <div className="flex-col justify-center md:hidden">
-            <button className="flex rounded-md border-4 border-orange-400" onClick={() =>{setBurgerState(!burgerState)}}>
+    <div className="bg-slate-300 flex flex-col justify-center drop-shadow-md">
+        <div className="md:hidden flex justify-center ">
+            <button className="rounded-md border-4 border-blue-300" onClick={setBurger}>
                 {burgerState ? <img className="max-h-9 max-w-9"src="/hamburger.png" alt="" />:<img className="max-h-9 max-w-9"src="closeHamburger.png" alt=""></img>}
             </button>
-            {!burgerState ? 
-            (<div className="flex flex-col justify-between">
-                <Link href="/" className="text-orange-400 hover:text-orange-300 overline font-mono">Home</Link>
-                <Link href="/Education"className="text-orange-400 hover:text-orange-300 overline font-mono" >Education</Link>
-                <Link href="/Experience" className="text-orange-400 hover:text-orange-300 overline font-mono">Experience</Link>
-                <Link href="/Projects" className="text-orange-400 hover:text-orange-300 overline font-mono">Projects</Link>
-            </div>):
-            <></>}
         </div>
         <div className="flex justify-center">
+        {!burgerState ? 
+            (<div className="flex flex-col md:hidden justify-center">
+                <Link href="/" className="text-orange-400 hover:text-orange-300  font-mono" onClick={setBurger}>Home</Link>
+                <Link href="/Education"className="text-orange-400 hover:text-orange-300  font-mono" onClick={setBurger}>Education</Link>
+                <Link href="/Experience" className="text-orange-400 hover:text-orange-300  font-mono" onClick={setBurger}>Experience</Link>
+                <Link href="/Projects" className="text-orange-400 hover:text-orange-300  font-mono" onClick={setBurger}>Projects</Link>
+            </div>):<></>}
+        </div>
+        <div className="flex justify-center">
+        {burgerState ?
+            <div className="flex justify-center md:hidden">
+                <img src="/navBar_small.png" alt="nav bar image" className="max-h-24 max-w-24"/>
+            </div>:<></>
+        }
+        </div>
+        <div className="md:flex md:justify-center hidden">
             <img src="/navPic.png" alt="nav bar image" className="max-h-24 max-w-24"/>
         </div>
         <div className="hidden md:flex md:flex-auto md:justify-center md:space-x-10">
