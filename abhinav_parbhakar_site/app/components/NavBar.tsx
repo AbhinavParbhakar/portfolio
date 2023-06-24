@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import {usePathname} from "next/navigation";
 
 export default function NavBar(){
+    var pathList:Array<string> = usePathname().split("/")
     const [burgerState,setBurgerState]  = useState(true)
     function setBurger(){
         setBurgerState(!burgerState)
