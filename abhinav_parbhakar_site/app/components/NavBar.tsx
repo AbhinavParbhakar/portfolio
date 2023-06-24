@@ -11,7 +11,7 @@ export default function NavBar(){
         setBurgerState(!burgerState)
     }
     return(
-    <div className="bg-slate-300 flex flex-col justify-center drop-shadow-md">
+    <div className="bg-slate-300 flex flex-col justify-center drop-shadow-md max-w-[100vw]">
         <div className="md:hidden flex justify-center ">
             <button className="rounded-md border-2 border-white-300 drop-shadow-lg" onClick={setBurger}>
                 {burgerState ? <img className="max-h-9 max-w-9"src="/hamburg-open.png" alt="" />:<img className="max-h-9 max-w-9"src="/hamburg-close.png" alt=""></img>}
