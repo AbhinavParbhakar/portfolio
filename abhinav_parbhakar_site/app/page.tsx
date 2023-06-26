@@ -24,7 +24,7 @@ export default function Home() {
         </p>
         <br/>
         <p className='font-sans max-w-[60vw]'>Currently, in the summer of 2023, I am living in Edmonton, AB, where I'm currently working on<Link href="/Experience" className='underline'> internships.</Link> I will continue my Education
-        in September 2023 as I head into my final year of my undergraduate degree. However, I'm open to work any software development or machine learning work part time during the coming semester so please feel free to contact me if you wish to learn more about my skillset and how I can contribute to projects. For more information on what I'm working on,
+        in September 2023 as I head into my final year of my undergraduate degree. However, I'm open to work any software development or machine learning work part time during the coming semester so please feel free to <Link href="/Contact" className='underline'>contact me</Link> if you wish to learn more about my skillset and how I can contribute to projects. For more information on what I'm working on,
          or to follow the work that I'm doing in real time, feel free to checkout my <Link className="underline"href="https://github.com/AbhinavParbhakar" target='_blank' rel='noopener'>GitHub repository</Link>.</p>
         <br />
         <p className='font-sans max-w-[60vw] mb-2'>Looking ahead, after completing my undergraduate degree, I hope to pursue a MSc in Computing Science with a focus on doing research in any field of machine learning as it's a field
