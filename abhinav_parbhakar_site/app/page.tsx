@@ -6,10 +6,10 @@ export default function Home() {
     <title>Abhinav Parbhakar Portfolio</title>
     <div className="flex flex-col mt-4 justify-center align-middle">
       <div className="flex flex-col md:flex-col md:justify-center items-center">
-            <h1 className='hidden md:flex md:my-3 md:font-bold'>Introduction</h1>
+            <h1 className='hidden md:flex md:font-bold md:mb-3'>Introduction</h1>
             <img src="/homePic.jpg" alt="Abhinav Parbhkar is an aspiring ML Engineer" className='hidden md:flex md:max-w-[70vw] md:h-[35vw]'/>
             <i className='hidden md:flex md:text-sm'>Overlooking Lake Louise, Banff</i>
-            <h1 className='my-3 font-bold md:hidden'>Introduction</h1>
+            <h1 className='mb-3 font-bold md:hidden'>Introduction</h1>
             <img src="/homePicSmall.jpg" alt="Abhinav Parbhakar" className='max-w-[60vw] max-h-[82vw] md:hidden'/>
             <i className='text-sm md:hidden'>Overlooking Peyto Lake, Banff</i>
       </div>

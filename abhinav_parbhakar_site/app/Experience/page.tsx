@@ -3,17 +3,15 @@ import Post from '../components/Posts'
 
 export default async function Experience(){
     let items:Array<post>= await name()
-    console.log(items)
     return(
-    <div>
-        <h1>
-            Work Experience
+    <div className="flex flex-col justify-between items-center mt-4">
+        <h1><b>Work Experience</b>
         </h1>
-        <p>
+        <div className="flex">
             {items.map((item:post)=>{
                 return <Post key={item.id} item={item}/>
             })}
-        </p>
+        </div>
     </div>
     )
 }
