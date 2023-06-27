@@ -23,7 +23,8 @@ const Post: React.FC<postProps> = ({item}) => {
         9: 'September',
         10: 'October',
         11: 'November',
-        12: 'December'
+        12: 'December',
+        13:'Currently Employed'
     };
     
     return (
@@ -31,10 +32,12 @@ const Post: React.FC<postProps> = ({item}) => {
             <h3>{item.employer}</h3>
             <h4><i>{item.title}</i></h4>
             <p><strong>{months[item.start_month]} - {months[item.end_month]}, {item.year}</strong></p>
-            <div>
+            <div className="ml-5">
                 <ul className="list-disc">
                     {bulletPoints.map((point:string) => {
-                        return <li >{point}.</li>
+                        if (point != ""){
+                            return <li >{point}.</li>
+                        }
                     })}
                 </ul>
             </div>
