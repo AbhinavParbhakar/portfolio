@@ -4,10 +4,10 @@ import Post from '../components/Posts'
 export default async function Experience(){
     let items:Array<post>= await name()
     return(
-    <div className="flex flex-col justify-between items-center mt-4">
+    <div className="flex flex-col justify-between items-center mt-4 flex-wrap">
         <h1><b>Work Experience</b>
         </h1>
-        <div className="flex flex-row max-w-[60vw] flex-wrap">
+        <div className="flex flex-wrap justify-center md:flex md:flex-auto md:flex-nowrap md:justify-normal">
             {items.map((item:post)=>{
                 return <Post key={item.id} item={item}/>
             })}
