@@ -21,7 +21,6 @@ export default function NavBar(){
                 <Link href="/" className="text-orange-400 hover:text-orange-300  font-mono px-8" onClick={setBurger}>Home</Link>
                 <Link href="/Education"className="text-orange-400 hover:text-orange-300  font-mono px-3" onClick={setBurger}>Education</Link>
                 <Link href="/Experience" className="text-orange-400 hover:text-orange-300  font-mono px-2" onClick={setBurger}>Experience</Link>
-                <Link href="/Projects" className="text-orange-400 hover:text-orange-300  font-mono px-4" onClick={setBurger}>Projects</Link>
                 <Link href="/Contact" className="text-orange-400 hover:text-orange-300  font-mono px-4" onClick={setBurger}>Contact</Link>
             </div>):<></>}
         </div>
@@ -39,7 +38,6 @@ export default function NavBar(){
             <Link href="/" className="text-orange-400 hover:text-orange-300 overline font-mono">Home</Link>
             <Link href="/Education"className="text-orange-400 hover:text-orange-300 overline font-mono" >Education</Link>
             <Link href="/Experience" className="text-orange-400 hover:text-orange-300 overline font-mono">Experience</Link>
-            <Link href="/Projects" className="text-orange-400 hover:text-orange-300 overline font-mono">Projects</Link>
             <Link href="/Contact" className="text-orange-400 hover:text-orange-300 overline font-mono">Contact</Link>
         </div>
     </div>

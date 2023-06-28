@@ -1,5 +1,9 @@
+'use client'
+
 import { post } from "../interface";
 import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface postProps{
     item:post
@@ -27,11 +31,13 @@ const Post: React.FC<postProps> = ({item}) => {
         13:'Currently Employed'
     };
     
+    const desiredPath:string = usePathname() + "/" + item.id
+
     return (
-    <div className="flex flex-col m-3 border-t-4 drop-shadow-md max-w-md">
-            <h3>{item.employer}</h3>
-            <h4><i>{item.title}</i></h4>
-            <p><strong>{months[item.start_month]}, {item.start_year} - {months[item.end_month]}, {item.end_year}</strong></p>
+    <div className="flex flex-col flex-auto m-3 border-t-4 drop-shadow-sm max-w-md">
+            <h3 className="text-orange-400"><strong>{item.employer}</strong></h3>
+            <h4 className="text-blue-400"><i>{item.title}</i></h4>
+            <p>{months[item.start_month]}, {item.start_year} - {months[item.end_month]}, {item.end_year}</p>
             <div className="ml-5">
                 <ul className="list-disc">
                     {bulletPoints.map((point:string) => {
@@ -41,6 +47,8 @@ const Post: React.FC<postProps> = ({item}) => {
                     })}
                 </ul>
             </div>
+            
+            <Link href={desiredPath}>Find out more</Link>
     </div>
     )
 }

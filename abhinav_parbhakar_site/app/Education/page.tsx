@@ -7,7 +7,7 @@ export default async function Education(){
     <div className="flex flex-col justify-between items-center mt-4 flex-wrap">
         <h1><b>Education</b>
         </h1>
-        <div className="flex flex-wrap justify-center md:flex md:flex-auto md:flex-nowrap md:justify-normal md:max-w-xl">
+        <div className="flex flex-wrap justify-center md:flex md:flex-auto md:flex-nowrap md:justify-normal">
             {items.map((item:post)=>{
                 return <Post key={item.id} item={item}/>
             })}
