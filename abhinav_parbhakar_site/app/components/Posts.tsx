@@ -31,7 +31,9 @@ const Post: React.FC<postProps> = ({item}) => {
         13:'Currently Employed'
     };
     
-    const desiredPath:string = usePathname() + "/" + item.id
+    const desiredPath:string = usePathname() + "/" + item.type + "-" + item.id
+    console.log(usePathname())
+    console.log(desiredPath)
 
     return (
     <div className="flex flex-col flex-auto m-3 border-t-4 drop-shadow-sm max-w-md">
