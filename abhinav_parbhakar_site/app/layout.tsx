@@ -20,7 +20,6 @@ export default function RootLayout({
       </head>
       <body >
       <NavBar />
-      <BreadCrumbs />
         {children}
         </body>
     </html>

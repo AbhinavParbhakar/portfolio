@@ -32,7 +32,6 @@ const Post: React.FC<postProps> = ({item}) => {
     };
     
     const desiredPath:string = usePathname() + "/" + item.type + "-" + item.id
-    console.log(usePathname())
     console.log(desiredPath)
 
     return (
@@ -48,9 +47,8 @@ const Post: React.FC<postProps> = ({item}) => {
                         }
                     })}
                 </ul>
+                <Link href={desiredPath} className="underline text-blue-300">Find out more</Link>
             </div>
-            
-            <Link href={desiredPath}>Find out more</Link>
     </div>
     )
 }

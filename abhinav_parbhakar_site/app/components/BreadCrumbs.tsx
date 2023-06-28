@@ -9,7 +9,7 @@ interface pathMapping{
 
 export default function BreadCrumbs(){
     var pathList:Array<string> = usePathname().split("/")
-    console.log(pathList)
+
     var count = 0
 
     let pathEmoji:pathMapping = {"":"🏠","Projects":"👨‍💻","Experience":"🧑‍💼","Education":"📖"}
