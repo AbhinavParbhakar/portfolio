@@ -18,17 +18,21 @@ export default function BreadCrumbs(){
     return(
     <div className="flex justify-center mt-2 md:hidden">
         {pathList.map((path:string)=>{
-            if (path == "" && count == 0){
-                count++
-                let currentPath = "Home"
-                return <Link href= {pathURL[path]}>{pathEmoji[path]} {currentPath} </Link>
-            }else if (path != ""){
-                count++
-                if (count > 0){
-                    return <Link href= {pathURL[path]}>&nbsp;&#8594; {pathEmoji[path]} {path}</Link>
-                }else{
-                    return <Link href= {pathURL[path]}>{pathEmoji[path]} {path}</Link>
-                }   
+            if (count < pathList.length){
+                if (path == "" && count == 0){
+                    count++
+                    let currentPath = "Home"
+                    return <Link href= {pathURL[path]}>{pathEmoji[path]} {currentPath} </Link>
+                }else if (path != ""){
+                    count++
+                    if (count > 0){
+                        return <Link href= {pathURL[path]}>&nbsp;&#8594; {pathEmoji[path]} {path}</Link>
+                    }else{
+                        return <Link href= {pathURL[path]}>{pathEmoji[path]} {path}</Link>
+                    }   
+                }
+            }else{
+                return <Link href={usePathname()}>{pathList[pathList.length - 1]}</Link>
             }
         })}
     </div>
