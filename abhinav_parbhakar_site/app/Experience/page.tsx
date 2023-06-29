@@ -7,7 +7,7 @@ export default async function Experience(){
     <div className="flex flex-col justify-between items-center mt-4 flex-wrap">
         <h1><b>Work Experience</b>
         </h1>
-        <div className="flex flex-wrap justify-center md:max-w-screen-80view">
+        <div className="flex flex-wrap justify-center md:max-w-[65vw]">
             {items.map((item:post)=>{
                 return <Post key={item.id} item={item}/>
             })}

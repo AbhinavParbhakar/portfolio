@@ -14,6 +14,7 @@ interface monthMapping{
 }
 
 const Post: React.FC<postProps> = ({item}) => {
+    const imgPath = "/" + item.title + ".png"
     const bulletPoints:Array<string> = item.description.split('.')
     const months:monthMapping = {
         1: 'January',
@@ -32,10 +33,10 @@ const Post: React.FC<postProps> = ({item}) => {
     };
     
     const desiredPath:string = usePathname() + "/" + item.type + "-" + item.id
-    console.log(desiredPath)
 
     return (
-    <div className="flex flex-col flex-auto m-3 border-t-4 drop-shadow-sm max-w-md">
+    <div className="flex flex-row m-4 border-t-4 drop-shadow-sm max-w-5xl">
+    <div className="flex flex-col flex-wrap">
             <h3 className="text-orange-400"><strong>{item.employer}</strong></h3>
             <h4 className="text-blue-400"><i>{item.title}</i></h4>
             <p>{months[item.start_month]}, {item.start_year} - {months[item.end_month]}, {item.end_year}</p>
@@ -47,8 +48,14 @@ const Post: React.FC<postProps> = ({item}) => {
                         }
                     })}
                 </ul>
-                <Link href={desiredPath} className="underline text-blue-300">Find out more</Link>
+                <Link href={desiredPath} className="underline text-blue-400">Find out more</Link>
             </div>
+    </div>
+    <div className="hidden lg:flex lg:w-[35vw] lg:h-[14vw] mt-2 ml-2 justify-center">
+    <img src={imgPath} alt={item.employer}/>
+    </div>
+    
+    
     </div>
     )
 }

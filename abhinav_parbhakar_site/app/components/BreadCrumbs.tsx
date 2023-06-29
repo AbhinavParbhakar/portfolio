@@ -17,14 +17,20 @@ export default function BreadCrumbs(){
     var count = 0
     var currentPath = ""
 
-    let pathEmoji:pathMapping = {"":"🏠","Projects":"👨‍💻","Experience":"🧑‍💼","Education":"📖"}
+    let pathEmoji:pathMapping = {"":"🏠","Projects":"👨‍💻","Experience":"👨‍💻","Education":"📖","Contact":"☎"}
     
 
     return(
     <div className="flex justify-center mt-2 md:hidden">
         {pathList.map((path:string)=>{
-            currentPath  = currentPath + "/" + pathList[count]
-            return <p>{pathEmoji[pathList[count]]}&nbsp;<Link href={currentPath}>&nbsp;&#8594;</Link></p>
+            let page = pathList[count]
+            count++
+            currentPath  = currentPath + "/" + page
+            if (count == pathList.length){
+                return <p>&nbsp;{pathEmoji[page]}&nbsp;<Link href={currentPath} className="underline text-blue-400">{page}</Link></p>
+            }else{
+                return <p>&nbsp;{pathEmoji[page]}&nbsp;<Link href={currentPath}>{page}</Link>&nbsp;&#8594;</p>
+            }
             })
         }
     </div>
