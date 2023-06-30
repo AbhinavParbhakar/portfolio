@@ -32,7 +32,8 @@ const Post: React.FC<postProps> = ({item}) => {
         13:'Currently Employed'
     };
     
-    const desiredPath:string = usePathname() + "/" + item.employer + "-" + item.title
+    var desiredPath:string = usePathname() + "/" + item.employer + "-" + item.title
+    desiredPath = desiredPath.replaceAll(" ","_")
 
     return (
     <div className="flex flex-row m-4 border-t-4 drop-shadow-sm max-w-5xl">
