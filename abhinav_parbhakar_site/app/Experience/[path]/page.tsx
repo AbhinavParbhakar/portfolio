@@ -11,7 +11,6 @@ export default async function name({params}:{params: { path:string}}) {
 
 async function getPageDetails(path:string) {
     var types:Array<string> = path.replaceAll("_"," ").split("-")
-    console.log(types)
     var body = {'employer':types[0],'title':types[1]}
     var response = await fetch("https://7buwhdoti2.execute-api.us-east-2.amazonaws.com/Alpha",{method:"POST",headers:{'content-type':'application/json'},body:JSON.stringify(body),mode:'cors'})
     let data = await response.json()

@@ -53,7 +53,7 @@ const Post: React.FC<postProps> = ({item}) => {
             </div>
     </div>
     <div className="hidden lg:flex lg:w-[35vw] lg:h-[14vw] mt-2 ml-2 justify-center">
-    <img src={imgPath} alt={item.employer}/>
+    <img src={imgPath} alt={item.employer} className="w-full h-full"/>
     </div>
     
     

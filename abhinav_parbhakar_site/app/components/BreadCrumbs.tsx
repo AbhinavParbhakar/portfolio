@@ -10,12 +10,14 @@ interface pathMapping{
 export default function BreadCrumbs(){
     var pathList:Array<string> = usePathname().split("/")
     
+    console.log(pathList)
+
     if (pathList[pathList.length - 1] == ""){
         pathList.pop()
     }
 
     var count = 0
-    var currentPath = ""
+    var currentPath = "/"
 
     let pathEmoji:pathMapping = {"":"🏠","Projects":"👨‍💻","Experience":"👨‍💻","Education":"📖","Contact":"☎"}
     
@@ -23,16 +25,26 @@ export default function BreadCrumbs(){
     return(
     <div className="flex justify-center mt-2 md:hidden">
         {pathList.map((path:string)=>{
-            let page = pathList[count]
-            count++
-            currentPath  = currentPath + "/" + page
-            if (count == pathList.length){
-                return <p>&nbsp;{pathEmoji[page]}&nbsp;<Link href={currentPath} className="underline text-blue-400">{page}</Link></p>
+            if (count == 0){
+                path = ""
+                currentPath = currentPath + ""
+                count++
+                return <p>&nbsp;{pathEmoji[path]}&nbsp;<Link href={currentPath} className="underline text-blue-400">Home</Link>&nbsp;</p>
+            }else if (count == (pathList.length - 1)){
+                currentPath = currentPath + path + "/"
+                if (count > 1){
+                    count++
+                    return <p>&nbsp;&#8594;&nbsp;{pathEmoji[path]}&nbsp;<Link href={currentPath} className="underline text-blue-400 inline" >{path.replaceAll("_"," ").split("-")[1]}</Link></p>
+                }else{
+                    count++
+                    return <p>&nbsp;&#8594;&nbsp;{pathEmoji[path]}&nbsp;<Link href={currentPath} className="underline text-blue-400 inline" >{path}</Link></p>
+                }
             }else{
-                return <p>&nbsp;{pathEmoji[page]}&nbsp;<Link href={currentPath}>{page}</Link>&nbsp;&#8594;</p>
+                currentPath = currentPath + path + "/"
+                count++
+                return <p>&nbsp;&#8594;&nbsp;{pathEmoji[path]}&nbsp;<Link href={currentPath} className="underline text-blue-400">{path}</Link></p>
             }
-            })
-        }
+        })}
     </div>
     )
 }
