@@ -5,8 +5,8 @@ export default async function Education(){
     let items:Array<post>= await name()
     return(
     <div className="flex flex-col justify-between items-center mt-4 flex-wrap">
-        <h1><b>Education</b>
-        </h1>
+        <title>Education</title>
+        <h1><b>Education</b></h1>
         <div className="flex flex-wrap justify-center md:max-w-[65vw]">
             {items.map((item:post)=>{
                 return <Post key={item.id} item={item}/>

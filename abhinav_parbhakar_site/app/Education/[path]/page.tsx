@@ -3,14 +3,14 @@ import { post } from "@/app/interface"
 export default async function name({params}:{params: { path:string}}) {
     let data:Array<post> = await getPageDetails(params.path)
     return(
-    <div className="flex flex-col items-center">
-        <title>{data[0]?.title}</title>
-        <h1 className="flex justify-center"><b>{data[0]?.title}</b></h1>
-        <div>
-            
+        <div className="flex flex-col items-center">
+            <title>{data[0]?.title}</title>
+            <h1 className="flex justify-center"><b>{data[0]?.title}</b></h1>
+            <div>
+                
+            </div>
         </div>
-    </div>
-    )
+        )
 }
 
 async function getPageDetails(path:string) {
