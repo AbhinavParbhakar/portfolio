@@ -5,7 +5,7 @@ export default async function name({params}:{params: { path:string}}) {
     return(
     <div className="flex flex-col items-center">
         <title>{data[0]?.title}</title>
-        <h1 className="flex justify-center"><b>{data[0]?.title}</b></h1>
+        <h1 className="flex justify-center mt-4"><b>{data[0]?.title}</b></h1>
         <div>
             
         </div>
