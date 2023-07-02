@@ -9,3 +9,9 @@ export interface post{
     start_year:number,
     end_year:number,
 }
+
+export interface formData{
+    name:string,
+    email:string,
+    message:string
+}
