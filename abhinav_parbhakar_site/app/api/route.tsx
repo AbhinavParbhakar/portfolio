@@ -7,20 +7,28 @@ export function GET(request:NextRequest){
     return NextResponse.json({'body':"This is a working API"})
 }
 
-function createEmailText(data:formData){
+function createEmailText(data:formData):string{
+    let emailArray:Array<string> = ["Contact Name: ","Contact Email: ","Contact Message: "]
+    let inputArray:Array<string> = [data.name,data.email,data.message]
+    let returnString = ""
 
+    let i = 0
+
+    while (i < emailArray.length){
+        returnString = returnString + emailArray[i] + inputArray[i] + "\n"
+        i++
+    }
+    return returnString
 }
 
 export async function POST(request:NextRequest){
-    let requestBody = await request.json()
-    let body:formData = await request.json()
-
-    const requestData = await requestBody.body
+    let requestBody:formData = await request.json()
+    console.log(requestBody)
     const messageConfig = {
         from:process.env.EMAIL_NAME,
-        to:process.env.EMAIL_NAME,
+        to:requestBody.email,
         subject:"Contact Message from Abhinav Parbhakar Portfolio",
-        text:""
+        text:createEmailText(requestBody)
     }
 
     try {
@@ -29,6 +37,4 @@ export async function POST(request:NextRequest){
     } catch (error) {
         return NextResponse.json({message:"Something went wrong"})
     }
-    
-    return NextResponse.json(body)
 }
