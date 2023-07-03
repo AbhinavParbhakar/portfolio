@@ -38,8 +38,8 @@ const Post: React.FC<postProps> = ({item}) => {
     return (
     <div className="flex flex-row m-4 border-t-4 drop-shadow-sm max-w-5xl">
     <div className="flex flex-col flex-wrap">
-            <h3 className="text-orange-400"><strong>{item.employer}</strong></h3>
-            <h4 className="text-blue-400"><i>{item.title}</i></h4>
+            <h3 className="text-orange-500"><strong>{item.employer}</strong></h3>
+            <h4 className="text-blue-500"><i>{item.title}</i></h4>
             <p>{months[item.start_month]}, {item.start_year} - {months[item.end_month]}, {item.end_year}</p>
             <div className="ml-5">
                 <ul className="list-disc">
