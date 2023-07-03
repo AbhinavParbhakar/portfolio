@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { transporter } from "../configs/nodeMailer";
 import { formData } from "../interface";
 import { readFileSync } from "fs";
+import path from "path";
 
 export function GET(request:NextRequest){
     return NextResponse.json({'body':"This is a working API"})
@@ -21,8 +22,9 @@ function createEmailText(data:formData):string{
     return returnString
 }
 
-function createEmailHtml():Buffer{
-    const htmlContent:Buffer = readFileSync("../emailTemplate/template.html")
+function createEmailHtml():string{
+    const filePath = path.join(process.cwd(),"app","api","template.html")
+    const htmlContent:string = readFileSync(filePath,"utf-8")
     return htmlContent
 }
 
