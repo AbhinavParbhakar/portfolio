@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { transporter } from "../configs/nodeMailer";
 import { formData } from "../interface";
-import { Options } from "nodemailer/lib/dkim";
+import { readFileSync } from "fs";
 
 export function GET(request:NextRequest){
     return NextResponse.json({'body':"This is a working API"})
@@ -21,6 +21,10 @@ function createEmailText(data:formData):string{
     return returnString
 }
 
+function createEmailHtml():Buffer{
+    const htmlContent:Buffer = readFileSync("../emailTemplate/template.html")
+    return htmlContent
+}
 
 export async function POST(request:NextRequest){
     let requestBody:formData = await request.json()
@@ -37,7 +41,7 @@ export async function POST(request:NextRequest){
         to:requestBody.email,
         subject:"Contact Message from Abhinav Parbhakar Portfolio",
         text:"       Confirmation Email         \n\nThis is confirmation of your email to me, Abhinav Parbhakar.\nI will reach out to you as soon possible, thank you for reaching out to me\n\nRegards,\nAbhinav Parbhakar",
-        html:"<div style='display: flex; flex-direction: column; align-items: center; max-width: 800px;'><div style='display: flex; justify-content: center; background-color: rgb(203 213 225); max-height: 96px;'><h1 style='color: rgb(251 146 60);'><strong>Email Confirmation</strong></h1></div><div style='display: flex; flex-direction: column; margin-top: 1rem;'><p>This is confirmation of your email to me, Abhinav Parbhakar. I will reach out to you as soon possible. Thank you for reaching out to me.</p><br /><p>Regards,</p><p>Abhinav</p></div></div>"
+        html:createEmailHtml()
     }
 
     try {
