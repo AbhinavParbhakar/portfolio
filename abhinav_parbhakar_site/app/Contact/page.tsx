@@ -33,11 +33,11 @@ export default function Contact(){
         <h2 className="flex mt-3 mb-1">Please fill out the following form:</h2>
         <form className="flex flex-col justify-center items-center max-w-md"action="" onSubmit={handleSubmit}>
             <h3 className="mt-3 text-orange-500"><b>Name</b></h3>
-            <input type="text" name="name" className="border-black border-2 rounded-lg" placeholder="--your name--" onChange={(e) =>{setFormData({...data,name:e.target.value})}}/>
+            <input type="text" name="name" className="border-black border-2 rounded-lg text-center max-w-[100%]" placeholder="Your name" onChange={(e) =>{setFormData({...data,name:e.target.value})}}/>
             <h3 className="mt-3 text-orange-500" ><b>Email</b></h3>
-            <input type="email" name="email" className="border-black border-2 rounded-lg " placeholder="--your email--"  onChange={(e) =>{setFormData({...data,email:e.target.value})}}/>
+            <input type="email" name="email" className="border-black border-2 rounded-lg text-center max-w-[100%]" placeholder="Your email"  onChange={(e) =>{setFormData({...data,email:e.target.value})}}/>
             <h3 className="mt-3 text-orange-500"><b>Message</b></h3>
-            <input type="text" name="message" className="border-black border-2 rounded-lg h-20" placeholder="--your message--" onChange={(e) =>{setFormData({...data,message:e.target.value})}}/>
+            <textarea name="message" className="border-black border-2 rounded-lg h-20 text-center max-w-[100%]"  placeholder="Your message" onChange={(e) =>{setFormData({...data,message:e.target.value})}}/>
             <button type="submit" className="mt-3 px-2 drop-shadow-md bg-slate-300 rounded-lg"><p className="text-blue-500"><b>Submit</b></p></button>
         </form> 
         </div>
