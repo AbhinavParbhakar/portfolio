@@ -38,18 +38,18 @@ const Post: React.FC<postProps> = ({item}) => {
     return (
     <div className="flex flex-row m-4 border-t-4 drop-shadow-sm max-w-5xl">
     <div className="flex flex-col flex-wrap">
-            <h3 className="text-orange-500"><strong>{item.employer}</strong></h3>
-            <h4 className="text-blue-500"><i>{item.title}</i></h4>
-            <p>{months[item.start_month]}, {item.start_year} - {months[item.end_month]}, {item.end_year}</p>
+            <h3 className="text-orange-500 font-sans"><strong>{item.employer}</strong></h3>
+            <h4 className="text-blue-500 font-sans"><i>{item.title}</i></h4>
+            <p className="font-sans">{months[item.start_month]}, {item.start_year} - {months[item.end_month]}, {item.end_year}</p>
             <div className="ml-5">
                 <ul className="list-disc">
                     {bulletPoints.map((point:string) => {
                         if (point != ""){
-                            return <li key={item.id}>{point}.</li>
+                            return <li key={item.id} className="font-sans">{point}.</li>
                         }
                     })}
                 </ul>
-                <Link href={desiredPath} className="underline text-blue-400">Find out more</Link>
+                <Link href={desiredPath} className="underline text-blue-400 font-sans">Find out more</Link>
             </div>
     </div>
     <div className="hidden lg:flex lg:w-[35vw] lg:h-[14vw] mt-2 ml-2 justify-center">

@@ -1,6 +1,8 @@
 'use client'
 
-import { FormEvent, use, useState } from "react"
+import { FormEvent, useState } from "react"
+import { useRouter } from "next/navigation"
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context"
 
 
 export default function Contact(){
@@ -8,6 +10,7 @@ export default function Contact(){
     const [sentState,setSentState] = useState(false)
     const [loadingState,setLoadingState] = useState(false)
     const [errorState,setErrorState] = useState(false)
+    let router:AppRouterInstance = useRouter()
 
 
     const handleSubmit = async (event:FormEvent) =>{
@@ -15,8 +18,7 @@ export default function Contact(){
         setLoadingState(true)
         let response:Response = await fetch("/api",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(data)})
         if (response.ok){
-            setSentState(true)
-            setLoadingState(false)
+            router.push("/Confirmation")
         }else{
             console.log(response.status)
         }
