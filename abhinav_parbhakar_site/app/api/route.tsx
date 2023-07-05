@@ -23,7 +23,7 @@ function createEmailText(data:formData):string{
 }
 
 function createEmailHtml():string{
-    const filePath = path.join(process.cwd(),"app","emailTemplate","template.html")
+    const filePath:string = path.join(process.cwd(),"app","emailTemplate","template.html")
     const htmlContent:string = readFileSync(filePath,"utf-8")
     return htmlContent
 }
