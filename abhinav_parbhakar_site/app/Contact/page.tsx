@@ -68,10 +68,6 @@ export default function Contact(){
                 setButtonSubmitted(false)
             }
         }else{
-            console.log("\n")
-            console.log(isEmailInputValid(data.email))
-            console.log(isNameInputValid(data.name))
-            console.log(isMessageInputValid(data.message))
             setErrorState(true)
             setLoadingState(false)
             setButtonSubmitted(false)
