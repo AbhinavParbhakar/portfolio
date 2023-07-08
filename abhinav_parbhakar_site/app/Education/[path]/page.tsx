@@ -6,9 +6,9 @@ export default async function name({params}:{params: { path:string}}) {
         <div className="flex flex-col items-center">
             <title>{data[0]?.title}</title>
             <h1 className="flex justify-center mt-4"><b>{data[0]?.title}</b></h1>
-            <div>
-                
-            </div>
+        <div className="flex flex-col mt-5 justify-center items-center">
+            <h2 className="text-lg"><b>🚧 Under Construction 🚧</b></h2>
+        </div>
         </div>
         )
 }

@@ -10,7 +10,6 @@ interface pathMapping{
 export default function BreadCrumbs(){
     var pathList:Array<string> = usePathname().split("/")
     
-    console.log(pathList)
 
     if (pathList[pathList.length - 1] == ""){
         pathList.pop()
