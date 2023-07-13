@@ -37,8 +37,8 @@ const Post: React.FC<postProps> = ({item}) => {
     desiredPath = desiredPath.replaceAll(" ","_")
 
     return (
-    <div className="flex flex-row m-4 border-t-4 drop-shadow-sm max-w-5xl">
-    <div className="flex flex-col flex-wrap">
+    <div className="flex flex-row m-4 border-t-4 drop-shadow-sm max-w-5xl justify-between">
+    <div className="flex flex-col flex-wrap justify-items-start">
             <h3 className="text-orange-500 font-sans"><strong>{item.employer}</strong></h3>
             <h4 className="text-blue-500 font-sans"><i>{item.title}</i></h4>
             <p className="font-sans">{months[item.start_month]}, {item.start_year} - {months[item.end_month]}, {item.end_year}</p>
@@ -53,11 +53,9 @@ const Post: React.FC<postProps> = ({item}) => {
                 <Link href={desiredPath} className="underline text-blue-400 font-sans">Find out more</Link>
             </div>
     </div>
-    <div className="hidden lg:flex mt-2 ml-2 justify-center">
-    <img src={imgPath} alt={item.employer} className="max-w-[15vw] max-h-[15vw]"/>
+    <div className="hidden lg:flex mt-2 ml-2 max-w-[10vw] items-start justify-center">
+    <img src={imgPath} alt={item.employer} />
     </div>
-    
-    
     </div>
     )
 }

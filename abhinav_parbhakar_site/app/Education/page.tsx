@@ -7,7 +7,7 @@ export default async function Education(){
     <div className="flex flex-col justify-between items-center mt-4 flex-wrap">
         <title>Education</title>
         <h1><b>Education</b></h1>
-        <div className="flex flex-wrap justify-center md:max-w-[65vw]">
+        <div className="flex flex-wrap flex-col justify-center md:max-w-[65vw]">
             {items.map((item:post)=>{
                 return <Post key={item.id} item={item}/>
             })}
