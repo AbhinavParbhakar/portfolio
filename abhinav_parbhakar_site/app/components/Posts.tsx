@@ -46,15 +46,15 @@ const Post: React.FC<postProps> = ({item}) => {
                 <ul className="list-disc">
                     {bulletPoints.map((point:string) => {
                         if (point != ""){
-                            return <li key={item.id} className="font-sans">{point}.</li>
+                            return <li key={item.id} className="font-sans mt-1">{point}.</li>
                         }
                     })}
                 </ul>
                 <Link href={desiredPath} className="underline text-blue-400 font-sans">Find out more</Link>
             </div>
     </div>
-    <div className="hidden lg:flex lg:w-[35vw] lg:h-[14vw] mt-2 ml-2 justify-center">
-    <img src={imgPath} alt={item.employer} className="w-full h-full"/>
+    <div className="hidden lg:flex mt-2 ml-2 justify-center">
+    <img src={imgPath} alt={item.employer} className="max-w-[15vw] max-h-[15vw]"/>
     </div>
     
     
