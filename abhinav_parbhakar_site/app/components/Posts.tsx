@@ -16,7 +16,7 @@ interface monthMapping{
 
 const Post: React.FC<postProps> = ({item}) => {
     const imgPath = "/" + item.title + ".png"
-    const bulletPoints:Array<string> = item.description.split('.')
+    const bulletPoints:Array<string> = item.description.split('|')
     const months:monthMapping = {
         1: 'January',
         2: 'February',
